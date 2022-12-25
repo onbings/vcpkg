@@ -1,0 +1,20 @@
+set(VCPKG_TARGET_ARCHITECTURE x86)
+set(VCPKG_CRT_LINKAGE static)
+set(VCPKG_LIBRARY_LINKAGE static)
+set(VCPKG_CMAKE_SYSTEM_NAME Android)
+
+set(VCPKG_CMAKE_SYSTEM_VERSION 30)
+#set(VCPKG_ROOT ${VCPKG_ROOT_DIR})
+#set(ANDROID_ABI x86_64)
+#
+#message("x64-android-30: VCPKG_CMAKE_SYSTEM_VERSION " ${VCPKG_CMAKE_SYSTEM_VERSION})
+#message("x64-android-30: ANDROID_ABI " ${ANDROID_ABI})
+#message("x64-android-30: VCPKG_ROOT " ${VCPKG_ROOT})
+
+ message("==x64-android-30=======> Start of variable")
+ get_cmake_property(_variableNames VARIABLES)
+ list (SORT _variableNames)
+ foreach (_variableName ${_variableNames})
+    message(STATUS "${_variableName}=${${_variableName}}")
+ endforeach()
+ message("==x64-android-30=======> End of variable")
