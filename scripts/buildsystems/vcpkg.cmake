@@ -447,7 +447,10 @@ endif()
 if(VCPKG_MANIFEST_MODE AND VCPKG_MANIFEST_INSTALL AND NOT Z_VCPKG_CMAKE_IN_TRY_COMPILE AND NOT Z_VCPKG_HAS_FATAL_ERROR)
     if(NOT EXISTS "${Z_VCPKG_EXECUTABLE}" AND NOT Z_VCPKG_HAS_FATAL_ERROR)
         message(STATUS "Bootstrapping vcpkg before install")
-
+   message("--------->log in " ${CMAKE_BINARY_DIR}/vcpkg-bootstrap.log)
+   message("--------->exec " ${Z_VCPKG_BOOTSTRAP_SCRIPT} ${VCPKG_BOOTSTRAP_OPTIONS})
+   message("--------->out " ${Z_VCPKG_BOOTSTRAP_LOG})
+   message("--------->err " ${Z_VCPKG_BOOTSTRAP_LOG})   
         set(Z_VCPKG_BOOTSTRAP_LOG "${CMAKE_BINARY_DIR}/vcpkg-bootstrap.log")
         file(TO_NATIVE_PATH "${Z_VCPKG_BOOTSTRAP_LOG}" Z_NATIVE_VCPKG_BOOTSTRAP_LOG)
         execute_process(
